@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Firebase</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/estilos.css">
+</head>
+
+<body>
+
+	<h1 class="center">CRUD PERSONAS FIREBASE</h1>
+
+	<div class="container">
+
+
+		<div class="row">
+
+
+			<div class="contenedor-form col-xs-12 col-sm-4 col-md-4">
+
+				<div class="form-group">
+					<label for="nombre">Nombre</label>
+					<input class="form-control" type="text" name="nombre" id="nombre">	
+				</div>
+				
+				<div class="form-group">
+					<label for="apellido">Apellido</label>
+					<input class="form-control" type="text" name="apellido" id="apellido">
+				</div>
+
+				<div class="form-group">
+					<label for="sexo">Sexo</label>
+					<input class="form-control" type="text" name="sexo" id="sexo">
+				</div>
+
+				<div class="form-group">
+					<label for="edad">Edad</label>
+					<input class="form-control" type="number" name="edad" id="edad">	
+				</div>
+
+				<div class="form-group">
+					<label for="dni">Dni</label>
+					<input class="form-control" type="number" name="dni" id="dni">	
+				</div>
+
+				<button class="btn btn-primary" id="guardar">Guardar</button>
+				<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalEliminar">Eliminar </button>
+
+				
+			</div>
+	
+
+		
+
+
+			<div class="contenedor-tabla col-xs-12 col-sm-8 col-md-8">
+				<table border="1px" class="table  table-bordered table-condensed table-responsive">
+					<thead>
+
+						<tr>
+							
+							<th>Nombre</th>
+							<th>Apellido</th>
+							<th>Sexo</th>
+							<th>Edad</th>
+							<th>Dni</th>
+							<th>Modificar</th>
+
+						</tr>
+
+					</thead>
+
+					<tbody id="tbody">
+						
+					</tbody>
+
+				</table>
+			</div>
+		</div>	
+
+	</div>
+
+
+	<!-- VENTANA MODAL ELIMINAR -->
+		  	<div class="modal fade" id="modalEliminar" role="dialog">
+
+		    	<div class="modal-dialog ">
+			      <div class="modal-content">
+
+			        <div class="modal-header">
+
+			          <button type="button" class="close" data-dismiss="modal">&times;</button>
+			          <h4 class="modal-title">Eliminar Persona</h4>
+
+			        </div>
+
+			        <div class="modal-body">
+
+				          <div class="form-group">
+				          	<label for="dni-delete">Dni</label>
+				          	<input type="text" name="dni-delete" id="dni-delete" class="form-control" placeholder="Ingrese el Dni de la persona que desee eliminar" >
+				          </div>
+
+				          <button class="btn btn-danger" id="eliminar-modal-delete" data-dismiss="modal" >Eliminar Persona</button>
+
+			        </div>
+
+			        <div class="modal-footer">
+			          <button type="button" class="btn btn-info" data-dismiss="modal">Salir</button>
+			        </div>
+
+			      </div>
+		      
+		    	</div>
+
+		  	</div>
+		  
+		</div>
+
+
+		<div class="modal fade" id="modalModificar" role="dialog">
+
+		    	<div class="modal-dialog ">
+			      <div class="modal-content">
+
+			        <div class="modal-header">
+
+			          <button type="button" class="close" data-dismiss="modal">&times;</button>
+			          <h4 class="modal-title">Modificar Persona</h4>
+
+			        </div>
+
+			        <div class="modal-body">
+
+						<div class="form-group">
+							<label for="dni">Dni</label>
+							<input class="form-control"  type="number" disabled="" name="dni" id="mod-dni">	
+						</div>
+
+						<div class="form-group">
+							<label for="nombre">Nombres</label>
+							<input class="form-control" type="text" name="nombre" id="mod-nombre">	
+						</div>
+						
+						<div class="form-group">
+							<label for="apellido">Apellidos</label>
+							<input class="form-control" type="text" name="apellido" id="mod-apellido">
+						</div>
+
+						<div class="form-group">
+							<label for="sexo">Sexo</label>
+							<input class="form-control" type="text" name="sexo" id="mod-sexo">
+						</div>
+
+						<div class="form-group">
+							<label for="edad">Edad</label>
+							<input class="form-control" type="number" name="edad" id="mod-edad">	
+						</div>
+
+
+
+				          <button class="btn btn-success" id="modal-modificar" data-dismiss="modal" >Modificar Persona</button>
+
+			        </div>
+
+			        <div class="modal-footer">
+			          <button type="button" class="btn btn-info" data-dismiss="modal">Salir</button>
+			        </div>
+
+			      </div>
+		      
+		    	</div>
+
+		  	</div>
+		  
+		</div>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+	<script src="js/firebase.js"></script>
+
+</body>
+</html>
